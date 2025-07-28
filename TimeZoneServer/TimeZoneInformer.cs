@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TimeZoneServer
+/// <summary>
+/// Provides information about various time zones and utilities for retrieving <see cref="TimeZoneInfo"/> objects.
+/// </summary>
+/// <remarks>The <see cref="TimeZoneInformer"/> class includes a predefined list of time zones with their
+/// associated cities, countries, and time zone identifiers. It also provides a method to retrieve <see
+/// cref="TimeZoneInfo"/> objects by their identifier, including support for custom time zones.</remarks>
+class TimeZoneInformer
 {
-    internal class TimeZoneInformer
-    {
-        public static readonly (string City, string Country, string TimeZoneId)[] TimeZones = new[]
+    public static readonly (string City, string Country, string TimeZoneId)[] TimeZones = new[]
     {
         ("Паго-Паго", "Американское Самоа", "Samoa Standard Time"),
         ("Гонолулу", "Гавайи, США", "Hawaiian Standard Time"),
@@ -38,25 +37,21 @@ namespace TimeZoneServer
         ("Киритимати", "Кирибати", "KiribatiTime")
     };
 
-        // Кастомные часовые пояса
-        private static readonly TimeZoneInfo SamoaTime = TimeZoneInfo.CreateCustomTimeZone("SamoaTime", TimeSpan.FromHours(13), "Апиа (Самоа)", "Апиа (Самоа)");
-        private static readonly TimeZoneInfo KiribatiTime = TimeZoneInfo.CreateCustomTimeZone("KiribatiTime", TimeSpan.FromHours(14), "Киритимати (Кирибати)", "Киритимати (Кирибати)");
+    private static readonly TimeZoneInfo SamoaTime = TimeZoneInfo.CreateCustomTimeZone("SamoaTime", TimeSpan.FromHours(13), "Апиа (Самоа)", "Апиа (Самоа)");
+    private static readonly TimeZoneInfo KiribatiTime = TimeZoneInfo.CreateCustomTimeZone("KiribatiTime", TimeSpan.FromHours(14), "Киритимати (Кирибати)", "Киритимати (Кирибати)");
 
-        public static TimeZoneInfo GetTimeZoneInfo(string id)
+    public static TimeZoneInfo GetTimeZoneInfo(string id)
+    {
+        if (id == "SamoaTime") return SamoaTime;
+        if (id == "KiribatiTime") return KiribatiTime;
+        try
         {
-            // Обработка кастомных часовых поясов
-            if (id == "SamoaTime") return SamoaTime;
-            if (id == "KiribatiTime") return KiribatiTime;
-            try
-            {
-                // Получение стандартного часового пояса
-                return TimeZoneInfo.FindSystemTimeZoneById(id);
-            }
-            catch (TimeZoneNotFoundException)
-            {
-                Console.WriteLine($"Ошибка: Часовой пояс '{id}' не найден. Возвращаемся к Russian Standard Time.");
-                return TimeZoneInfo.FindSystemTimeZoneById("Russian Standard Time");
-            }
+            return TimeZoneInfo.FindSystemTimeZoneById(id);
+        }
+        catch (TimeZoneNotFoundException)
+        {
+            Console.WriteLine($"Ошибка: Часовой пояс '{id}' не найден. Возвращаемся к Russian Standard Time.");
+            return TimeZoneInfo.FindSystemTimeZoneById("Russian Standard Time");
         }
     }
 }
