@@ -2,11 +2,10 @@
 using System.IO.Pipes;
 using System.IO;
 /// <summary>
-/// Provides functionality for communicating with a named pipe server to perform operations such as changing the time
-/// zone or sending custom commands.
+/// Предоставляет функциональность для взаимодействия с сервером именованного канала для выполнения операций, таких как изменение часового пояса или отправка пользовательских команд.
 /// </summary>
-/// <remarks>This class contains static methods for interacting with a named pipe server using the "TimeZonePipe"
-/// pipe. It allows sending predefined or custom commands and processing the server's responses.</remarks>
+/// <remarks>Этот класс содержит статические методы для взаимодействия с сервером именованного канала с использованием канала "TimeZonePipe". 
+/// Он позволяет отправлять предопределенные или пользовательские команды и обрабатывать ответы сервера.</remarks>
 class NamedPipeClient
 {
     public static void HandleChangeTimeZone()

@@ -1,10 +1,9 @@
 ﻿using System;
 /// <summary>
-/// Provides information about various time zones and utilities for retrieving <see cref="TimeZoneInfo"/> objects.
+/// Предоставляет информацию о различных часовых поясах и утилиты для получения объектов <see cref="TimeZoneInfo"/>.
 /// </summary>
-/// <remarks>The <see cref="TimeZoneInformer"/> class includes a predefined list of time zones with their
-/// associated cities, countries, and time zone identifiers. It also provides a method to retrieve <see
-/// cref="TimeZoneInfo"/> objects by their identifier, including support for custom time zones.</remarks>
+/// <remarks>Класс <see cref="TimeZoneInformer"/> включает предопределенный список часовых поясов с соответствующими городами, странами и идентификаторами часовых поясов. 
+/// Он также предоставляет метод для получения объектов <see cref="TimeZoneInfo"/> по их идентификатору, включая поддержку пользовательских часовых поясов.</remarks>
 class TimeZoneInformer
 {
     public static readonly (string City, string Country, string TimeZoneId)[] TimeZones = new[]

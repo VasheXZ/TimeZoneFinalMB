@@ -1,18 +1,18 @@
 ﻿using System;
 /// <summary>
-/// Provides functionality to handle and process user commands related to time zone operations.
+/// Предоставляет функциональность для обработки и выполнения пользовательских команд, связанных с операциями с часовыми поясами.
 /// </summary>
-/// <remarks>The <see cref="CommandHandler"/> class reads user input in a loop, processes various commands,  and
-/// interacts with a named pipe client to execute time zone-related operations. Supported commands include: <list
-/// type="bullet"> <item><description><c>changetimezone</c>: Changes the current time zone.</description></item>
-/// <item><description><c>settimezone &lt;number&gt;</c>: Sets the time zone by its numeric
-/// identifier.</description></item> <item><description><c>timezone &lt;ID&gt;</c>: Retrieves information about a
-/// specific time zone by its ID.</description></item> <item><description><c>gettime</c>: Retrieves the current time in
-/// the configured time zone.</description></item> <item><description><c>combinetimezones &lt;number1&gt;
-/// &lt;number2&gt; ...</c>: Combines up to four time zones by their numeric identifiers.</description></item>
-/// <item><description><c>stop</c>: Stops the current operation.</description></item> <item><description><c>exit</c>:
-/// Exits the command loop.</description></item> </list> Invalid or unsupported commands are forwarded to the named pipe
-/// client for further handling.</remarks>
+/// <remarks>Класс <see cref="CommandHandler"/> читает пользовательский ввод в цикле, обрабатывает различные команды и взаимодействует с клиентом именованного канала для выполнения операций с часовыми поясами.
+/// Поддерживаемые команды включают: <list
+/// type="bullet"> 
+/// <item><description><c>changetimezone</c>: Изменяет текущий часовой пояс.</description></item>
+/// <item><description><c>settimezone &lt;номер&gt;</c>: Устанавливает часовой пояс по его числовому идентификатору.</description></item> 
+/// <item><description><c>timezone &lt;ID&gt;</c>: Получает информацию о конкретном часовом поясе по его идентификатору.</description></item> 
+/// <item><description><c>gettime</c>: Получает текущее время в настроенном часовом поясе.</description></item> 
+/// <item><description><c>combinetimezones &lt;номер1&gt; &lt;номер2&gt; ...</c>: Объединяет до четырех часовых поясов по их числовым идентификаторам.</description></item>
+/// <item><description><c>stop</c>: Останавливает текущую операцию.</description></item> 
+/// <item><description><c>exit</c>: Выходит из командного цикла.</description></item> 
+/// </list> Неверные или неподдерживаемые команды перенаправляются клиенту именованного канала для дальнейшей обработки.</remarks>
 class CommandHandler
 {
     public static void Run()

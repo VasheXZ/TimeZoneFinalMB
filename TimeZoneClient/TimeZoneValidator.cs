@@ -1,9 +1,8 @@
 ﻿using System;
 /// <summary>
-/// Validates whether a given string represents a valid time zone number.
+/// Проверяет, представляет ли заданная строка допустимый номер часового пояса.
 /// </summary>
-/// <remarks>A valid time zone number is an integer between 1 and 26, inclusive. If the validation fails, an error
-/// message is written to the console.</remarks>
+/// <remarks>Допустимый номер часового пояса - это целое число от 1 до 26 включительно. Если проверка не проходит, сообщение об ошибке выводится в консоль.</remarks>
 class TimeZoneValidator
 {
     public static bool IsValidTimeZoneNumber(string number, out int index)

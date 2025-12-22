@@ -3,14 +3,13 @@ using System.IO.Pipes;
 using System.IO;
 using System.Linq;
 /// <summary>
-/// Provides functionality to create and manage a named pipe server for handling client commands related to time zone
-/// management and time retrieval.
+/// Предоставляет функциональность для создания и управления сервером именованного канала для обработки клиентских команд, связанных с управлением часовыми поясами и получением времени.
 /// </summary>
-/// <remarks>The <see cref="NamedPipeServer"/> class listens for client connections via a named pipe and processes
-/// commands sent by clients. Supported commands include changing the time zone, retrieving the current time, and
-/// managing combined time zone outputs. The server runs continuously until explicitly stopped by a client command or
-/// external intervention.  This class is designed to handle multiple client connections sequentially, with each
-/// connection being processed in isolation. It uses the "TimeZonePipe" named pipe for communication.</remarks>
+/// <remarks>Класс <see cref="NamedPipeServer"/> прослушивает клиентские подключения через именованный канал и обрабатывает команды, отправленные клиентами. 
+/// Поддерживаемые команды включают изменение часового пояса, получение текущего времени и управление комбинированными выводами часовых поясов. 
+/// Сервер работает непрерывно до явной остановки по команде клиента или внешнего вмешательства. 
+/// Этот класс предназначен для последовательной обработки множественных клиентских подключений, где каждое соединение обрабатывается изолированно. 
+/// Для коммуникации используется именованный канал "TimeZonePipe".</remarks>
 class NamedPipeServer
 {
     public static void StartNamedPipeServer()

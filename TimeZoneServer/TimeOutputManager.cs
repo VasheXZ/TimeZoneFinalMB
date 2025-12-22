@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Threading;
 /// <summary>
-/// Manages the output of the current time for a specified time zone or a combination of time zones.
+/// Управляет выводом текущего времени для указанного часового пояса или комбинации часовых поясов.
 /// </summary>
-/// <remarks>This class provides functionality to display the current time in a specified time zone or multiple
-/// time zones in combined mode. The time is updated periodically while the manager is running. The default time zone is
-/// "Russian Standard Time".  The behavior of the time output is controlled by the following static fields: <list
-/// type="bullet"> <item> <description><see cref="current_TimeZone_ID"/>: Specifies the time zone ID for single time
-/// zone mode.</description> </item> <item> <description><see cref="is_Running"/>: Indicates whether the time output
-/// process is active.</description> </item> <item> <description><see cref="combined_TimeZones"/>: Specifies the indices
-/// of time zones to display in combined mode.</description> </item> <item> <description><see cref="is_Combined_Mode"/>:
-/// Determines whether the manager operates in combined mode.</description> </item> </list></remarks>
+/// <remarks>Этот класс предоставляет функциональность для отображения текущего времени в указанном часовом поясе или нескольких часовых поясах в комбинированном режиме. 
+/// Время периодически обновляется во время работы менеджера. 
+/// Часовой пояс по умолчанию - "Russian Standard Time". Поведение вывода времени контролируется следующими статическими полями: <list
+/// type="bullet"> 
+/// <item> <description><see cref="current_TimeZone_ID"/>: Определяет идентификатор часового пояса для режима одного часового пояса.</description> </item> 
+/// <item> <description><see cref="is_Running"/>: Указывает, активен ли процесс вывода времени.</description> </item> 
+/// <item> <description><see cref="combined_TimeZones"/>: Определяет индексы часовых поясов для отображения в комбинированном режиме.</description> </item> 
+/// <item> <description><see cref="is_Combined_Mode"/>: Определяет, работает ли менеджер в комбинированном режиме.</description> </item> 
+/// </list></remarks>
 class TimeOutputManager
 {
     public static string current_TimeZone_ID = "Russian Standard Time";
